@@ -1,0 +1,254 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  }
+ },
+ "2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
+   "type": "minimax",
+   "device": "default"
+  }
+ },
+ "3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+  }
+ },
+ "4": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+  }
+ },
+ "6": {
+  "class_type": "MiniMaxH3ReferenceToVideo",
+  "inputs": {
+   "clip": [
+    "2",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "audio_vae": [
+    "4",
+    0
+   ],
+   "prompt": "subject_definitions:\n<Subject 1> is a middle-aged East Asian man in a black jacket and dark shirt, sprinting in panic, visible in <Picture 1>.\n<Subject 2> is a large dense crowd of pursuers in dark clothing chasing about ten meters behind him, visible in <Picture 1>.\n<Picture 1> is the first frame of [Shot 1], fixing the camera position, framing, set layout and lighting.\n\nsummary:\n[keyframe completion] The target video is one continuous shot set in a wet city intersection at dusk with traffic lights and a wooden fruit stand on the right sidewalk, beginning from <Picture 1>.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - identity, face, age, hairstyle, body build and clothing are retained.\n<Subject 2> (appears in [Shot 1]): fully_preserved - identity, face, age, hairstyle, body build and clothing are retained.\n<Picture 1> ([Shot 1] first frame): fully_preserved - camera position, framing, set layout, furniture and lighting are retained.\n\ndetailed_description:\nThe target video is in the style of a realistic cinematic live-action film, 35mm grain, natural dusk lighting, wet street reflections.\n[Shot 1] The shot begins from <Picture 1>. A middle-aged East Asian man in a black jacket and dark shirt is <Subject 1>. A large dense crowd of pursuers in dark clothing chasing about ten meters behind him is <Subject 2>. The camera pulls backward in front of the sprinting man keeping him centered, then swings to a low side tracking shot that follows him along the sidewalk. A wet city intersection at dusk, warm sunset backlight reflecting on the pavement, traffic lights glowing red and green. A middle-aged man in a black jacket sprints in the center foreground, a dense crowd of pursuers ten meters behind him, a wooden fruit stand stacked with oranges and apples on the right sidewalk. Starting from <Picture 1>, the man sprints straight toward the camera along the crosswalk, arms pumping hard, while the crowd closes in behind him. The camera pulls backward ahead of him, then swings to a side tracking shot at street level. At about five seconds, he slams sideways into the wooden fruit stand; the stand tips over and oranges and apples scatter rolling across the wet pavement. He drops onto one knee, plants both hands on the ground, pushes himself back up within two seconds, and keeps sprinting down the street as the panicked crowd still chases close behind.\nNo captions, no watermarks, no text, no distorted faces.\nThe running man does not speak or open his mouth; only the crowd makes noise.\n\noverall_soundscape:\nPanicked crowd shouting and screaming, chaotic footsteps splashing on wet pavement, urgent city traffic ambience.\n\nnon_diegetic_music:\nN/A",
+   "width": 1344,
+   "height": 768,
+   "length": 243,
+   "ref_image_size": "match",
+   "ref_images.ref_image_0": [
+    "5",
+    0
+   ]
+  }
+ },
+ "7": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 42
+  }
+ },
+ "8": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  }
+ },
+ "9": {
+  "class_type": "BasicScheduler",
+  "inputs": {
+   "model": [
+    "80",
+    0
+   ],
+   "scheduler": "simple",
+   "steps": 4,
+   "denoise": 1.0
+  }
+ },
+ "12": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "11",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ]
+  }
+ },
+ "15": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "14",
+    0
+   ],
+   "filename_prefix": "h3_shot/out_1793202162",
+   "format": "mp4",
+   "codec": "h264"
+  }
+ },
+ "16": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "12",
+    0
+   ],
+   "filename_prefix": "h3_shot_png/out_1793202162/f"
+  }
+ },
+ "82": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "lora_name": "dmad_h3_4step_lora_critic_comfy.safetensors",
+   "strength_model": 1.0
+  }
+ },
+ "83": {
+  "class_type": "MiniMaxH3SigmaShift",
+  "inputs": {
+   "model": [
+    "82",
+    0
+   ],
+   "shift_video": 12,
+   "shift_audio": 2
+  }
+ },
+ "80": {
+  "class_type": "ModelAttentionBackend",
+  "inputs": {
+   "model": [
+    "83",
+    0
+   ],
+   "attention": "comfy kitchen attention"
+  }
+ },
+ "96": {
+  "class_type": "VedaSparseAttention",
+  "inputs": {
+   "model": [
+    "80",
+    0
+   ],
+   "predictor": "minimax_h3_r2va_veda_preview_fp8.safetensors",
+   "generated_sparsity": "trained",
+   "reference_sparsity": "trained",
+   "full_attention_layers": "",
+   "full_attention_steps": "",
+   "verbose": false
+  }
+ },
+ "5": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "h3_shot/out_1793202162_first.png"
+  }
+ },
+ "40": {
+  "class_type": "MiniMaxH3AddGuide",
+  "inputs": {
+   "positive": [
+    "6",
+    0
+   ],
+   "latent": [
+    "6",
+    1
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "image": [
+    "5",
+    0
+   ],
+   "frame_idx": 0
+  }
+ },
+ "13": {
+  "class_type": "VAEDecodeAudio",
+  "inputs": {
+   "samples": [
+    "11",
+    0
+   ],
+   "vae": [
+    "4",
+    0
+   ]
+  }
+ },
+ "14": {
+  "class_type": "CreateVideo",
+  "inputs": {
+   "images": [
+    "12",
+    0
+   ],
+   "audio": [
+    "13",
+    0
+   ],
+   "fps": 24
+  }
+ },
+ "10": {
+  "class_type": "BasicGuider",
+  "inputs": {
+   "model": [
+    "96",
+    0
+   ],
+   "conditioning": [
+    "40",
+    0
+   ]
+  }
+ },
+ "11": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "7",
+    0
+   ],
+   "guider": [
+    "10",
+    0
+   ],
+   "sampler": [
+    "8",
+    0
+   ],
+   "sigmas": [
+    "9",
+    0
+   ],
+   "latent_image": [
+    "6",
+    1
+   ]
+  }
+ }
+}

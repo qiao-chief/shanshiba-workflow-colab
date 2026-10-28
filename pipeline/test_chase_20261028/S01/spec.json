@@ -1,0 +1,33 @@
+{
+  "duration": 10,
+  "size": [1344, 768],
+  "seed": 42,
+  "steps": 14,
+  "draft": true,
+  "style": "a realistic cinematic live-action film, 35mm grain, natural dusk lighting, wet street reflections",
+  "setting": "a wet city intersection at dusk with traffic lights and a wooden fruit stand on the right sidewalk",
+  "first_frame": "first.png",
+  "subjects": [
+    {
+      "key": "runner",
+      "desc": "a middle-aged East Asian man in a black jacket and dark shirt, sprinting in panic"
+    },
+    {
+      "key": "crowd",
+      "desc": "a large dense crowd of pursuers in dark clothing chasing about ten meters behind him"
+    }
+  ],
+  "shots": [
+    {
+      "camera": "The camera pulls backward in front of the sprinting man keeping him centered, then swings to a low side tracking shot that follows him along the sidewalk.",
+      "action": "A wet city intersection at dusk, warm sunset backlight reflecting on the pavement, traffic lights glowing red and green. A middle-aged man in a black jacket sprints in the center foreground, a dense crowd of pursuers ten meters behind him, a wooden fruit stand stacked with oranges and apples on the right sidewalk. Starting from <Picture 1>, the man sprints straight toward the camera along the crosswalk, arms pumping hard, while the crowd closes in behind him. The camera pulls backward ahead of him, then swings to a side tracking shot at street level. At about five seconds, he slams sideways into the wooden fruit stand; the stand tips over and oranges and apples scatter rolling across the wet pavement. He drops onto one knee, plants both hands on the ground, pushes himself back up within two seconds, and keeps sprinting down the street as the panicked crowd still chases close behind.",
+      "dialogue": []
+    }
+  ],
+  "constraints": [
+    "No captions, no watermarks, no text, no distorted faces.",
+    "The running man does not speak or open his mouth; only the crowd makes noise."
+  ],
+  "soundscape": "Panicked crowd shouting and screaming, chaotic footsteps splashing on wet pavement, urgent city traffic ambience.",
+  "music": "N/A"
+}

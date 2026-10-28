@@ -1,0 +1,25 @@
+subject_definitions:
+<Subject 1> is a middle-aged East Asian man in a black jacket and dark shirt, sprinting in panic, visible in <Picture 1>.
+<Subject 2> is a large dense crowd of pursuers in dark clothing chasing about ten meters behind him, visible in <Picture 1>.
+<Picture 1> is the first frame of [Shot 1], fixing the camera position, framing, set layout and lighting.
+
+summary:
+[keyframe completion] The target video is 2 shots set in a wet city intersection at dusk with traffic lights and a wooden fruit stand stacked with oranges and apples on the right sidewalk, beginning from <Picture 1>.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - identity, face, age, hairstyle, body build and clothing are retained.
+<Subject 2> (appears in [Shot 1]): fully_preserved - identity, face, age, hairstyle, body build and clothing are retained.
+<Picture 1> ([Shot 1] first frame): fully_preserved - camera position, framing, set layout, furniture and lighting are retained.
+
+detailed_description:
+The target video is in the style of a realistic cinematic live-action film, 35mm grain, natural dusk lighting, wet street reflections.
+[Shot 1] The shot begins from <Picture 1>. A middle-aged East Asian man in a black jacket and dark shirt is <Subject 1>. A large dense crowd of pursuers in dark clothing chasing about ten meters behind him is <Subject 2>. The camera holds a frontal tracking shot, pulling backward ahead of the sprinting man at fast speed, keeping him centered. A wet city intersection at dusk, warm sunset backlight reflecting on the pavement, traffic lights glowing red and green above the crosswalk. Starting from <Picture 1>, the man in the black jacket sprints straight toward the camera along the wet crosswalk, knees driving high, arms pumping hard at his sides. Behind him, the dense crowd of pursuers in dark clothing closes the distance, their footsteps pounding the wet pavement in unison. The wooden fruit stand stacked with oranges and apples stays visible on the right sidewalk as he runs past the camera position.
+[Shot 2] At 00:04.500, the camera cuts to a low side tracking shot at street level. The camera trucks right alongside the runner at fast speed, tracking him at knee height along the sidewalk. The man races along the sidewalk toward the wooden fruit stand. His shoulder slams into the stand's corner; the stand tips over and oranges and apples burst outward, rolling and bouncing across the wet pavement. He drops to one knee, one hand touching the pavement for balance, and within the same continuous motion he drives back up through his legs and springs forward into a full sprint again, never stopping. The crowd pours around the fallen fruit, still chasing close behind him.
+No captions, no watermarks, no text, no distorted faces.
+No one speaks; the running man's mouth stays closed, only the crowd makes noise.
+
+overall_soundscape:
+A panicked crowd shouting and screaming, dozens of footsteps pounding and splashing on wet pavement, a loud wooden crash as the fruit stand tips over, fruit rolling on wet asphalt, distant city traffic underneath.
+
+non_diegetic_music:
+N/A

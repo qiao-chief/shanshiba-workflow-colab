@@ -1,0 +1,43 @@
+{
+ "duration": 10,
+ "size": [
+  1344,
+  768
+ ],
+ "seed": 42,
+ "steps": 14,
+ "style": "a realistic cinematic live-action film, 35mm grain, natural dusk lighting, wet street reflections",
+ "setting": "a wet city intersection at dusk with traffic lights and a wooden fruit stand stacked with oranges and apples on the right sidewalk",
+ "first_frame": "f0_first.png",
+ "subjects": [
+  {
+   "key": "runner",
+   "desc": "a middle-aged East Asian man in a black jacket and dark shirt, sprinting in panic"
+  },
+  {
+   "key": "crowd",
+   "desc": "a large dense crowd of pursuers in dark clothing chasing about ten meters behind him"
+  }
+ ],
+ "shots": [
+  {
+   "camera": "The camera holds a frontal tracking shot, pulling backward ahead of the sprinting man at fast speed, keeping him centered.",
+   "action": "A wet city intersection at dusk, warm sunset backlight reflecting on the pavement, traffic lights glowing red and green above the crosswalk. Starting from <Picture 1>, the man in the black jacket sprints straight toward the camera along the wet crosswalk, knees driving high, arms pumping hard at his sides. Behind him, the dense crowd of pursuers in dark clothing closes the distance, their footsteps pounding the wet pavement in unison. The wooden fruit stand stacked with oranges and apples stays visible on the right sidewalk as he runs past the camera position.",
+   "dialogue": [],
+   "at": null
+  },
+  {
+   "at": 4.5,
+   "cut_to": "a low side tracking shot at street level",
+   "camera": "The camera trucks right alongside the runner at fast speed, tracking him at knee height along the sidewalk.",
+   "action": "The man races along the sidewalk toward the wooden fruit stand. His shoulder slams into the stand's corner; the stand tips over and oranges and apples burst outward, rolling and bouncing across the wet pavement. He drops to one knee, one hand touching the pavement for balance, and within the same continuous motion he drives back up through his legs and springs forward into a full sprint again, never stopping. The crowd pours around the fallen fruit, still chasing close behind him.",
+   "dialogue": []
+  }
+ ],
+ "constraints": [
+  "No captions, no watermarks, no text, no distorted faces.",
+  "No one speaks; the running man's mouth stays closed, only the crowd makes noise."
+ ],
+ "soundscape": "A panicked crowd shouting and screaming, dozens of footsteps pounding and splashing on wet pavement, a loud wooden crash as the fruit stand tips over, fruit rolling on wet asphalt, distant city traffic underneath.",
+ "music": "N/A"
+}
